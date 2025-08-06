@@ -49,74 +49,50 @@ body {
 
 /* Clients Section */
 .clients-section {
-  position: relative;
   background-color: #f8f9fa;
   overflow: hidden;
-}
-
-.clients-section img {
-  max-height: 70px;
-}
-
-.logo-container {
-  display: flex;
-  width: 100%;
-  padding: 2rem 0;
   position: relative;
+}
+
+.logo-wrapper {
   overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .logo-track {
   display: flex;
-  align-items: center;
-  gap: 5rem;
-  padding: 0 1rem;
-  animation: scroll 30s linear infinite;
+  width: max-content;
+  animation: scroll-left 10s linear infinite;
+}
+
+.logo-set {
+  display: flex;
 }
 
 .logo-item {
-  height: 33px;
-  width: 33px;
-  object-fit: contain;
+  height: 25px; /* Naikkan sedikit agar lebih terlihat */
+  margin: 0 2rem;
   filter: grayscale(100%);
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .logo-item:hover {
-  filter: grayscale(0);
-  transform: scale(1.05);
+  filter: grayscale(0%);
+  transform: scale(1.1);
 }
 
-/* Panjang translateX dikalikan total item (12) */
-@keyframes scroll {
+/* Animation: geser setengah panjang track (karena isinya diulang 2x) */
+@keyframes scroll-left {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(calc(-200px * 6)); /* 6 item dikali jarak antar item */
+    transform: translateX(-50%);
   }
 }
 
-.clients-section::before,
-.clients-section::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.clients-section::before {
-  left: 0;
-  background: linear-gradient(to right, #f8f9fa, rgba(248, 249, 250, 0));
-}
-
-.clients-section::after {
-  right: 0;
-  background: linear-gradient(to left, #f8f9fa, rgba(248, 249, 250, 0));
-}
 
 
 /* Elevate Section */
