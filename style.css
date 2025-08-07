@@ -403,12 +403,12 @@ body {
   }
 
   .logo-item {
-    height: 50px;
+    height: 32px;
   }
 
   .logo-track {
-    gap: 1.5rem;
-    animation: scroll 20s linear infinite;
+    gap: 1.2rem;
+    animation: scroll 10s linear infinite;
   }
 
   .box {
